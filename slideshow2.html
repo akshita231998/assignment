@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    body,html{
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+
+    div{
+      height: 80%;
+      width: 80%;
+      font-size: 100px;
+      color: black;
+      position: absolute;
+      transition-duration: 1s;
+      transition-timing-function: ease-in-out;
+      border-radius: 30px;
+      border: solid 2px white;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    div:nth-child(1)
+    {
+      top: 10%;
+      left: 10%;
+      background-color: #ff4d4d;
+    }
+
+    div:nth-child(2)
+    {
+      top: -80%;
+      left: 10%;
+      background-color:#ffb3b3 ;
+    }
+
+    div:nth-child(3)
+    {
+      top: -80%;
+      left: 10%;
+      background-color:#4d4dff ;
+    }
+
+    div:nth-child(4)
+    {
+      top: 100%;
+      left: 10%;
+      background-color:#8080ff ;
+    }
+
+    div:nth-child(5)
+    {
+      top: 100%;
+      left: 10%;
+      background-color:#ff9900 ;
+    }
+
+    div:nth-child(6)
+    {
+      left: -80%;
+      top: 10%;
+      background-color:#4d0039 ;
+    }
+
+    div:nth-child(7)
+    {
+      left: -80%;
+      top: 10%;
+      background-color:#007399 ;
+    }
+
+    div:nth-child(8)
+    {
+      left: 100%;
+      top: 10%;
+      background-color:#808000 ;
+    }
+
+    div:nth-child(9)
+    {
+      left: 100%;
+      top: 10%;
+      background-color: #666699;
+    }
+
+    img{
+      height: 80%;
+      width: 90%;
+      position: relative;
+      top: 10%;
+      left: 5%;
+      border-radius: 20px;
+      border: solid 3px black;
+    }
+
+    button{
+      height: 5%;
+      width: 5%;
+      position: absolute;
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 48px;
+    }
+
+    #left{
+      right: 2.5%;
+      top: 47.5%;
+    }
+
+    #right{
+      left: 2.5%;
+      top: 47.5%;
+    }
+
+    #top{
+      left: 47.5%;
+      bottom: 2.5%;
+    }
+
+    #down{
+      left: 47.5%;
+      top: 2.5%;
+    }
+
+    #topc,#downc{
+      height: 10%;
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      left: 0;
+      border: none;
+    }
+
+    #leftc,#rightc{
+      height: 100%;
+      width: 10%;
+      position: absolute;
+      top: 0;
+      background-color: black;
+      border: none;
+    }
+
+    #topc{
+      top: 0;
+    }
+    #downc{
+      bottom: 0;
+    }
+    #rightc{
+      right: 0;
+    }
+    #leftc{
+      left: 0;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div><img src="pic1.jpg"></img></div>
+    <div><img src="pic2.jpg"></img></div>
+    <div><img src="pic3.jpg"></img></div>
+    <div><img src="pic4.jpg"></img></div>
+    <div><img src="pic5.jpg"></img></div>
+    <div><img src="pic6.jpg"></img></div>
+    <div><img src="pic7.jpg"></img></div>
+    <div><img src="pic8.jpg"></img></div>
+    <div><img src="pic9.jpg"></img></div>
+    <div id="topc"></div>
+    <div id="downc"></div>
+    <div id="leftc"></div>
+    <div id="rightc"></div>
+    <button id="left" onclick="leftm()"><i class="fa fa-angle-double-right"></i></button>
+    <button id="right" onclick="rightm()"><i class="fa fa-angle-double-left"></i></button>
+    <button id="top" onclick="topm()"><i class="fa fa-angle-double-down"></i></button>
+    <button id="down" onclick="downm()"><i class="fa fa-angle-double-up"></i></button>
+
+  </body>
+
+  <script>
+
+    var current=1;
+    var lefta=[9,8,1,6,7];
+    var righta=[7,6,1,8,9];
+    var topa=[5,4,1,2,3];
+    var downa=[3,2,1,4,5];
+    var lefti=3;
+    var righti=3;
+    var topi=3;
+    var downi=3;
+
+    function leftm()
+    {
+      if(lefti>=0 && lefti<=4){
+      document.querySelector("div:nth-child("+current+")").style.left="100%";
+      document.querySelector("div:nth-child("+lefta[lefti]+")").style.left="10%";
+      current=lefta[lefti];
+      downa[downi-1]=topa[topi-1]=current;
+      lefti++;
+      righti--;
+      }
+      console.log(lefta);
+      console.log(righta);
+      console.log(topa);
+      console.log(downa);
+    }
+
+    function rightm()
+    {
+      if(righti>=0 && righti<=4)
+      {
+        document.querySelector("div:nth-child("+current+")").style.left="-80%";
+        document.querySelector("div:nth-child("+righta[righti]+")").style.left="10%";
+        current=righta[righti];
+        downa[downi-1]=topa[topi-1]=current;
+        righti++;
+        lefti--;
+      }
+      console.log(lefta);
+      console.log(righta);
+      console.log(topa);
+      console.log(downa);
+    }
+
+    function topm()
+    {
+      if(topi>=0 && topi<=4)
+      {
+        document.querySelector("div:nth-child("+current+")").style.top="100%";
+        document.querySelector("div:nth-child("+topa[topi]+")").style.top="10%";
+        current=topa[topi];
+        righta[righti-1]=lefta[lefti-1]=current;
+        topi++;
+        downi--;
+      }
+      console.log(lefta);
+      console.log(righta);
+      console.log(topa);
+      console.log(downa);
+    }
+
+    function downm()
+    {
+      if(downi>=0 && downi<=4)
+      {
+        document.querySelector("div:nth-child("+current+")").style.top="-80%";
+        document.querySelector("div:nth-child("+downa[downi]+")").style.top="10%";
+        current=downa[downi];
+        righta[righti-1]=lefta[lefti-1]=current;
+        downi++;
+        topi--;
+      }
+      console.log(lefta);
+      console.log(righta);
+      console.log(topa);
+      console.log(downa);
+    }
+
+    document.onkeydown = check;
+
+function check(e) {
+
+    // e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        e.preventDefault();
+        downm();
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        e.preventDefault();
+        topm();
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+       e.preventDefault();
+       rightm();
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       e.preventDefault();
+       leftm();
+    }
+
+}
+
+
+
+
+  </script>
+
+</html>
