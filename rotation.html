@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body,html{
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+      perspective: 3000px;
+    }
+      img{
+        height: 100%;
+        width: 100%;
+      }
+
+      .header{
+        height: 10%;
+        width: 25%;
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);;
+        position: absolute;
+        top: 0;
+        padding-top: 1.5%;
+        font-size: 17px;
+        font-family: arial;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+
+      /*.header:nth-child(1)*/
+      #header1
+      {
+        left: 0;
+      }
+
+      #header2
+      {
+        left: 25%;
+      }
+
+      #header3
+      {
+        left: 50%;
+      }
+
+      #header4
+      {
+        left: 75%;
+      }
+
+      .header:hover{
+        background-color: black;
+      }
+
+      #header1:hover #vet{
+        display: block;
+      }
+
+      #vet{
+        height: 300%;
+        width: 100%;
+        display: none;
+      }
+
+      .vet{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 5%;
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .vet:hover{
+        background-color: black;
+      }
+
+      #vet div:nth-child(1)
+      {
+        top: 100%;
+      }
+
+      #vet div:nth-child(2)
+      {
+        top:200%;
+      }
+      #vet div:nth-child(3)
+      {
+        top: 300%;
+      }
+
+      #rafi{
+        height: 400%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        display: none;
+      }
+
+      #kishore{
+        height: 300%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        display: none;
+      }
+
+      #rafi div{
+        height: 25%;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5%;
+        box-sizing: border-box;
+      }
+
+      #kishore div{
+        height: 33.33%;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5%;
+        box-sizing: border-box;
+      }
+
+      #rafi div:hover{
+        background-color: black;
+      }
+
+      #kishore div:hover{
+        background-color: black;
+      }
+
+      #rafi div:nth-child(1)
+      {
+        top: -25%;
+      }
+
+      #rafi div:nth-child(2)
+      {
+        top: 0%;
+      }
+
+      #rafi div:nth-child(3)
+      {
+        top: 25%;
+      }
+
+      #rafi div:nth-child(4)
+      {
+        top: 50%;
+      }
+
+      #kishore div:nth-child(1)
+      {
+        top: -33.33%;
+      }
+
+      #kishore div:nth-child(2)
+      {
+        top: 0%;
+      }
+
+      #kishore div:nth-child(3)
+      {
+        top: 33.33%;
+      }
+
+
+      .vet:nth-child(1):hover #rafi
+      {
+        display: block;
+        animation-name: show;
+        animation-duration: 2s;
+        transform-origin: left;
+      }
+
+      .vet:nth-child(2):hover #kishore
+      {
+        display: block;
+        animation-name: show;
+        animation-duration: 2s;
+        transform-origin: left;
+      }
+
+      @keyframes show{
+        from{
+          transform: rotateY(-90deg);
+        }
+        to{
+          transform: rotateY(0deg);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <img src="bg.jpg"></img>
+    <div id="header4" class="header">HOME</div>
+    <div class="header" id="header2">BOLLYWOOD</div>
+    <div class="header" id="header3">CLASSICAL</div>
+    <div class="header" id="header1">VETERAN
+      <div id="vet">
+        <div class="vet">MOHAMMED RAFI
+          <div id="rafi">
+            <div>Kya hua tera vada</div>
+            <div>Likhe jo khat tujhe</div>
+            <div>Dard-E-Dil</div>
+            <div>Chand Mera Dil</div>
+          </div>
+        </div>
+        <div class="vet">KISHORE KUMAR
+          <div id="kishore">
+            <div>Dil kya kare</div>
+            <div>Pal Pal</div>
+            <div>Kehne ki bat nahi</div>
+          </div>
+        </div>
+        <div class="vet">LATA MANGESHKAR</div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
